@@ -9,7 +9,7 @@
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
+    pre { line-height: 125%; }
 td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -14264,8 +14264,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We now propose some (very easy) exercises without solutions.</p>
-<p>Try executing them in Netbeans, repl.it and JavaTutor to get familiar with all environments.</p>
+<p>We now propose some easy exercises without solutions.</p>
+<p>Try executing them in some IDE, repl.it and terminal to get familiar with all environments.</p>
 
 </div>
 </div>
@@ -14278,24 +14278,16 @@ a.anchor-link {
 <span class="nb">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
 </pre></div>
 <p>After the code that you will write, by running this:</p>
-<div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </pre></div>
 <p>You should see:</p>
 
 <pre><code>9
 4
 7</code></pre>
-<p>There are various ways to do it, try to use <strong>only one</strong> temporary variable and be careful not to lose values !</p>
-<p><strong>HINT</strong>: to help yourself, try to write down in comments the state of the memory, and think which command to do</p>
-<div class="highlight"><pre><span></span><span class="c1">// a b c t    which command do I need?</span>
-<span class="c1">// 4 7 9</span>
-<span class="c1">// 4 7 9 7    t = b</span>
-<span class="c1">//</span>
-<span class="c1">//</span>
-<span class="c1">//</span>
-</pre></div>
+<p>There are various ways to do it, try to use <strong>only one</strong> temporary variable and be careful not to lose values.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14304,15 +14296,18 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
 
 <span class="c1">// write code here</span>
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -14349,7 +14344,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -14392,7 +14387,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">days</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">days</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">hours</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">minutes</span> <span class="o">=</span> <span class="mi">52</span><span class="p">;</span>
 </pre></div>
@@ -14416,7 +14411,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">days</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">days</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">hours</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">minutes</span> <span class="o">=</span> <span class="mi">52</span><span class="p">;</span>
 
@@ -14440,8 +14435,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>In total there are 6592 minutes left
-</pre>
+<pre>In total there are 6592 minutes left</pre>
 </div>
 </div>
 
@@ -14469,7 +14463,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">totMinutes</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">totMinutes</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
 
 <span class="c1">// write here</span>
 </pre></div>
@@ -14507,10 +14501,12 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>QUESTION</strong>: given two numbers <code>a</code> and <code>b</code>, which of the following expressions are equivalent?</p>
-<div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="mf">2.</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">b</span><span class="p">)</span>
-<span class="mf">3.</span> <span class="o">-</span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
-<span class="mf">4.</span> <span class="o">-</span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="mf">1.</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="n">max</span><span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">b</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="o">-</span><span class="n">min</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+<span class="mf">4.</span> <span class="o">-</span><span class="n">max</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14532,7 +14528,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">b_mat</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">b_bac</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">b_cov</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">r_mat</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">r_bac</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">r_cov</span><span class="o">=</span><span class="mi">24</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">b_mat</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">b_bac</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">b_cov</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">r_mat</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">r_bac</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">r_cov</span><span class="o">=</span><span class="mi">24</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -14550,6 +14546,7 @@ a.anchor-link {
 <li><strong>NOTE 1</strong>: we are not interested in which factory will produce the armchair, we just want to know the shortest time in which we will get an armchair</li>
 <li><strong>NOTE 2</strong>: suppose both factories <strong>don't</strong> have components in store</li>
 <li><strong>NOTE 3</strong>: the two factories <strong>do not</strong> exchange components</li>
+<li><strong>NOTE 4</strong>: <code>std::min</code> and <code>max</code> only take 2 parameters, to pass more use curly brackets like <code>std::min({1,2,3})</code></li>
 </ul>
 
 </div>
@@ -14576,11 +14573,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">b_mat</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">b_bac</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">b_cov</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">r_mat</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">r_bac</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">r_cov</span><span class="o">=</span><span class="mi">24</span><span class="p">;</span>    <span class="c1">// 38</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">b_mat</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">b_bac</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">b_cov</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">r_mat</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">r_bac</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">r_cov</span><span class="o">=</span><span class="mi">24</span><span class="p">;</span>    <span class="c1">// 38</span>
 <span class="c1">//int b_mat=81, b_bac=37, b_cov=32, r_mat=54, r_bac=36, r_cov=91;  // 82</span>
 <span class="c1">//int b_mat=21, b_bac=39, b_cov=47, r_mat=54, r_bac=36, r_cov=91;  // 48</span>
-
-<span class="c1">// IMPORTANT: `Math.min` and `Math.max` can only take **two** parameters</span>
 
 <span class="c1">// write here</span>
 </pre></div>
@@ -14602,8 +14597,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The first armchair will be produced in 38 hours.
-</pre>
+<pre>The first armchair will be produced in 38 hours.</pre>
 </div>
 </div>
 
@@ -14616,6 +14610,9 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Exercise---circle">Exercise - circle<a class="anchor-link" href="#Exercise---circle">&#182;</a></h3><p>✪ Calculate the area of a circle at the center of a soccer ball (radius = 9.1m), remember that  $area= pi*r^2$</p>
 <p>Your code should print as result <code>263.02199094102605</code></p>
+<ul>
+<li>display with <code>printf</code></li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14624,7 +14621,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -14644,8 +14641,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>263.02199094102605
-</pre>
+<pre>263.02199094102605</pre>
 </div>
 </div>
 
@@ -14657,6 +14653,9 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Exercise---fractioning">Exercise - fractioning<a class="anchor-link" href="#Exercise---fractioning">&#182;</a></h3><p>✪ Write some code to calculate the value of the following formula for  <code>x = 0.000003</code>, you should obtain <code>2.753278226511882</code></p>
+<ul>
+<li>display with <code>printf</code></li>
+</ul>
 
 </div>
 </div>
@@ -14670,7 +14669,7 @@ $$\Large -\frac{\sqrt{x+3}}{\frac{(x + 2)^3}{\log{x}}}$$
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.000003</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.000003</span><span class="p">;</span>
 
 <span class="c1">// write here</span>
 </pre></div>
@@ -14692,8 +14691,7 @@ $$\Large -\frac{\sqrt{x+3}}{\frac{(x + 2)^3}{\log{x}}}$$
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2.753278226511882
-</pre>
+<pre>2.753278226511882</pre>
 </div>
 </div>
 
@@ -14704,7 +14702,10 @@ $$\Large -\frac{\sqrt{x+3}}{\frac{(x + 2)^3}{\log{x}}}$$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise---summation">Exercise - summation<a class="anchor-link" href="#Exercise---summation">&#182;</a></h3><p>Write some code to calculate the value of the following expression (don't use cycles, write down all calculations), you should obtain <code>20.53333333333333</code></p>
+<h3 id="Exercise---summation">Exercise - summation<a class="anchor-link" href="#Exercise---summation">&#182;</a></h3><p>Write some code to calculate the value of the following expression (don't use cycles, write down all calculations), you should obtain <code>20.533333</code></p>
+<ul>
+<li>use <a href="https://www.cplusplus.com/reference/iomanip/setprecision/">setprecision</a> to change displayed digits by <code>cout</code></li>
+</ul>
 
 </div>
 </div>
@@ -14718,7 +14719,7 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// write here</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="c1">// write here</span>
 </pre></div>
 
      </div>
@@ -14738,46 +14739,8 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>20.53333333333333
-</pre>
+<pre>20.533333</pre>
 </div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="mf">2.5f</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3</pre>
-</div>
-
 </div>
 
 </div>
@@ -14787,7 +14750,7 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Reals---conversion">Reals - conversion<a class="anchor-link" href="#Reals---conversion">&#182;</a></h3><p>If we want to convert a real to an integer, several ways are available:</p>
+<h3 id="Reals---conversion">Reals - conversion<a class="anchor-link" href="#Reals---conversion">&#182;</a></h3><p>If we want to convert a real to an integer, several ways are available with functions in <code>std::</code> namespace:</p>
 <table>
 <thead><tr>
 <th>Function</th>
@@ -14798,7 +14761,7 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 </thead>
 <tbody>
 <tr>
-<td><code>Math.floor(x)</code></td>
+<td><code>floor(x)</code></td>
 <td>round x to inferior double</td>
 <td>$$\lfloor{8.7}\rfloor$$</td>
 <td>8.0</td>
@@ -14810,22 +14773,22 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 <td>8</td>
 </tr>
 <tr>
-<td><code>Math.ceil(x)</code></td>
+<td><code>ceil(x)</code></td>
 <td>round x to superior double</td>
 <td>$$\lceil{5.3}\rceil$$</td>
 <td>6.0</td>
 </tr>
 <tr>
-<td><code>Math.round(x)</code></td>
-<td>round x to closest integer</td>
-<td>$$\lfloor{2.4}\rceil$$</td>
-<td>2</td>
+<td><code>round(x)</code></td>
+<td>round x to closest double</td>
+<td>$$\lfloor{2.49}\rceil$$</td>
+<td>2.0</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>$$\lfloor{2.51}\rceil$$</td>
-<td>3</td>
+<td>3.0</td>
 </tr>
 </tbody>
 </table>
@@ -14835,29 +14798,31 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>QUESTION</strong>: Look at the following expressions, and for each of them try to guess which result it produces (or if it gives an error).</p>
+<div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</pre></div>
 <ol>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">floor</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">2.3</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">floor</span><span class="p">(</span><span class="mf">-2.3</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mf">3.49</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">round</span><span class="p">(</span><span class="mf">3.49</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mf">3.51</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">round</span><span class="p">(</span><span class="mf">3.51</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="o">-</span><span class="mf">3.49</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">round</span><span class="p">(</span><span class="mf">-3.49</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="o">-</span><span class="mf">3.51</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">round</span><span class="p">(</span><span class="mf">-3.51</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">8.1</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">ceil</span><span class="p">(</span><span class="mf">8.1</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><div class="highlight"><pre><span></span><span class="n">Math</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">8.1</span><span class="p">)</span>
+<li><div class="highlight"><pre><span></span><span class="n">ceil</span><span class="p">(</span><span class="mf">-8.1</span><span class="p">)</span>
 </pre></div>
 </li>
 </ol>
@@ -14867,7 +14832,7 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>QUESTION</strong>: Given a float <code>x</code>, the following formula is:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">Math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">floor</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">ceil</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 <ol>
 <li>always <code>true</code></li>
@@ -14886,7 +14851,7 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>QUESTION</strong>: Given a float <code>x</code>, the following formula is:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">-</span><span class="n">Math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">-</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 <ol>
 <li>always <code>true</code></li>
@@ -14904,12 +14869,13 @@ $$\normalsize \sum_{j=1}^{3}{\frac{j^4}{j + 2}}$$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise----Invigorate">Exercise -  Invigorate<a class="anchor-link" href="#Exercise----Invigorate">&#182;</a></h3><p>✪ Excessive studies lead you search on internet recipes of energetic drinks. Luckily, a guru of nutrition just posted on her Instagram channel @HealthyDrink this recipe of a miracle drink:</p>
+<h3 id="Exercise----Invigorate">Exercise -  Invigorate<a class="anchor-link" href="#Exercise----Invigorate">&#182;</a></h3><p>✪ Excessive studies lead you search on internet recipes of energetic drinks. Luckily, a guru of nutrition just posted on her Instagram channel @HealthyDrinker this recipe of a miracle drink:</p>
 <blockquote><p>Pour in a mixer 2 decilitres of kiwi juice, 4 decilitres of soy sauce, and 3 decilitres of shampoo of karitè bio. Mix vigorously and then pour half drink into a glass. Fill the glass until the superior deciliter. Swallow in one shot.</p>
 </blockquote>
 <p>You run shopping the ingredients, and get ready for mixing them. You have a measuring cup with which you transfer the precious fluids, one by one. While transfering, you always pour a little bit more than necessary (but never more than 1 decilitre), and for each ingredient you then remove the excess.</p>
 <ul>
 <li><strong>DO NOT</strong> use subtractions, try using only rounding operators</li>
+<li><strong>HINT</strong>: C++ &lt; 20 facilities for formatting floats aren't that great, sometimes  <code>printf</code> is preferable</li>
 </ul>
 
 </div>
@@ -14939,16 +14905,15 @@ I fill the glass until superior deciliter, now it contains: 5 dl</code></pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">double</span> <span class="n">kiwi</span> <span class="o">=</span> <span class="mf">2.4</span><span class="p">;</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">double</span> <span class="n">kiwi</span> <span class="o">=</span> <span class="mf">2.4</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">soy</span> <span class="o">=</span> <span class="mf">4.8</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">shampoo</span> <span class="o">=</span> <span class="mf">3.1</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">measuring_cup</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">mixer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">glass</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-
 
 <span class="c1">// write here</span>
 </pre></div>
@@ -14971,9 +14936,9 @@ I fill the glass until superior deciliter, now it contains: 5 dl</code></pre>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>I pour into the measuring cup 2.4 dl of kiwi juice, then I remove excess until keeping 2 dl
-I transfer into the mixer, now it contains 2.0 dl 
+I transfer into the mixer, now it contains 2.0 dl
 I pour into the measuring cup 4.8 dl of soia, then I remove excess until keeping 4 dl
-I transfer into the mixer, now it contains 6.0 dl 
+I transfer into the mixer, now it contains 6.0 dl
 I pour into the measuring cup 3.1 dl of shampoo, then I remove excess until keeping 3 dl
 I transfer into the mixer, now it contains 9.0 dl
 I pour half of the mix ( 4.5 dl ) into the glass
@@ -14995,10 +14960,10 @@ I fill the glass until superior deciliter, now it contains: 5 dl
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -15018,8 +14983,7 @@ I fill the glass until superior deciliter, now it contains: 5 dl
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Triangle area is: 120.0
-</pre>
+<pre>Triangle area is: 120.0</pre>
 </div>
 </div>
 
@@ -15030,16 +14994,19 @@ I fill the glass until superior deciliter, now it contains: 5 dl
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise---square-area">Exercise - square area<a class="anchor-link" href="#Exercise---square-area">&#182;</a></h3><p>Compute the area of a square having side (<code>s</code>) equal to 145 units. Assign the result to a variable named <code>area</code> and print it, it should show <code>Square area is: 21025</code></p>
+<h3 id="Exercise---square-area">Exercise - square area<a class="anchor-link" href="#Exercise---square-area">&#182;</a></h3><p>Compute the area of a square having side (<code>s</code>) equal to <code>145</code> units. Assign the result to a variable named <code>area</code> and print it, it should show <code>Square area is: 21025</code></p>
+<ul>
+<li>use <code>pow</code> function</li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -15059,8 +15026,7 @@ I fill the glass until superior deciliter, now it contains: 5 dl
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Square area is: 21025
-</pre>
+<pre>Square area is: 21025</pre>
 </div>
 </div>
 
@@ -15072,17 +15038,16 @@ I fill the glass until superior deciliter, now it contains: 5 dl
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Exercise---area-from-input">Exercise - area from input<a class="anchor-link" href="#Exercise---area-from-input">&#182;</a></h3><p>Modify the program at previous point to acquire the side <code>s</code> from the user at runtime.</p>
-<p><strong>HINT</strong>: use the <a href="https://www.w3schools.com/java/java_user_input.asp">Scanner</a> object and remember to convert the acquired value into an <code>int</code> with <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html#parseInt(java.lang.String">Integer.parseInt</a>)).</p>
-<p>Try also to put the two previous scripts in two separate files (e.g. <code>TriangleArea.java</code> and <code>SquareArea.java</code> and execute them from the terminal)</p>
+<p>Try also to put the two previous scripts in two separate files (e.g. <code>TriangleArea.cc</code> and <code>SquareArea.cc</code> and execute them from the terminal)</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -15102,10 +15067,8 @@ I fill the glass until superior deciliter, now it contains: 5 dl
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Insert size: 
-4
-Square area is: 16
-</pre>
+<pre>Insert size: 4
+Square area is: 16</pre>
 </div>
 </div>
 
@@ -15116,17 +15079,17 @@ Square area is: 16
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise---trapezoid">Exercise - trapezoid<a class="anchor-link" href="#Exercise---trapezoid">&#182;</a></h3><p>Write a small script (<code>trapezoid.java</code>) that computes the area of a trapezoid having major base (<code>mj</code>) equal to 30 units, minor base (mn) equal to 12 and height (<code>h</code>) equal to 17. Print the resulting area. Try executing the script from a text editor like Netbeans and from the terminal.</p>
-<p>It should print <code>Trapezoid area is:  357.0</code></p>
+<h3 id="Exercise---trapezoid">Exercise - trapezoid<a class="anchor-link" href="#Exercise---trapezoid">&#182;</a></h3><p>Write a small script (<code>trapezoid.cc</code>) that computes the area of a trapezoid having major base (<code>mj</code>) equal to 30 units, minor base (<code>mb</code>) equal to 12 and height (<code>h</code>) equal to 17. Print the resulting area. Try executing the script from a an IDE and from the terminal.</p>
+<p>It should print <code>Trapezoid area is:  357</code></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -15146,8 +15109,7 @@ Square area is: 16
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Trapezoid area is: 357.0
-</pre>
+<pre>Trapezoid area is: 357</pre>
 </div>
 </div>
 
@@ -15170,10 +15132,10 @@ Square area is: 16
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -15193,8 +15155,7 @@ Square area is: 16
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum of first 1200 integers: 720600
-</pre>
+<pre>Sum of first 1200 integers: 720600</pre>
 </div>
 </div>
 
@@ -15205,10 +15166,10 @@ Square area is: 16
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span>
 </pre></div>
 
      </div>
@@ -15228,9 +15189,8 @@ Square area is: 16
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Input number n:
-6
-Sum of first 6 integers: 21
+<pre>Input number n: 1200
+Sum of first 1200 integers: 720600
 </pre>
 </div>
 </div>
@@ -15242,8 +15202,63 @@ Sum of first 6 integers: 21
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise---hypotenuse">Exercise - hypotenuse<a class="anchor-link" href="#Exercise---hypotenuse">&#182;</a></h3><p>Write a small script to compute the length of the hypotenuse (<code>c</code>) of a right triangle having sides <code>a</code>=133 and <code>b</code>=72 units (see picture below). It should print <code>Hypotenuse:  151.23822268196622</code></p>
+<h3 id="Exercise---hypotenuse">Exercise - hypotenuse<a class="anchor-link" href="#Exercise---hypotenuse">&#182;</a></h3><p>✪ Write a small script to compute the length of the hypotenuse (<code>c</code>) of a right triangle having sides <code>a</code>=133 and <code>b</code>=72 units (see picture below). It should print <strong>exactly</strong> <code>Hypotenuse:  151.23822268196622</code></p>
 <p><img src="img/triangle.png" alt="triangle 9u349y43"></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-c++"><pre><span></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Hypotenuse: 151.23822268196622</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercise---quadratic">Exercise - quadratic<a class="anchor-link" href="#Exercise---quadratic">&#182;</a></h3><p>✪ Write some code to calculate the zeroes of the equation $ax^2-b = 0$</p>
+<ul>
+<li>Show numbers with <strong>20 digits</strong></li>
+<li><strong>NOTE</strong>: since we have <code>float</code> numbers, digits after 6 may not be really significative</li>
+<li>At the end check that by substituting the value obtained <code>x</code> into the equation you actually obtain zero (or a neighborhood of it!)</li>
+</ul>
+<p>Example - given:</p>
+<div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">11.0</span>
+<span class="kt">float</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.3</span>
+</pre></div>
+<p>after your code it must print:</p>
+
+<pre><code>11.0 * x**2 - 3.3 = 0 for x1 = 0.54772251844406127930
+11.0 * x**2 - 3.3 = 0 for x2 = -0.54772251844406127930
+0.54772251844406127930 is a solution? true
+-0.54772251844406127930 is a solution? true</code></pre>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15252,7 +15267,10 @@ Sum of first 6 integers: 21
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">11.0f</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.3f</span><span class="p">;</span>
+
+<span class="c1">// write here</span>
 </pre></div>
 
      </div>
@@ -15272,7 +15290,10 @@ Sum of first 6 integers: 21
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Hypotenuse: 151.23822268196622
+<pre>11.0 * x**2 - 3.3 = 0 per x1 = 0.54772251844406127930
+11.0 * x**2 - 3.3 = 0 per x2 = -0.54772251844406127930
+0.54772251844406127930 is a solution? true
+-0.54772251844406127930 is a solution? true
 </pre>
 </div>
 </div>
@@ -15284,7 +15305,7 @@ Sum of first 6 integers: 21
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise---airport">Exercise - airport<a class="anchor-link" href="#Exercise---airport">&#182;</a></h3><p>You finally decide to take a vacation and you go to the airport, but you already know you will need to go through various queues. Luckily, you only have carry-on bag, so you directly go to security checks, where you can choose among three rows of people <code>sec1</code>, <code>sec2</code>, <code>sec3</code>. Each person an average takes 4 minutes to be examinated, you included, and obviously you choose the shortest queue. Afterwards you go to the gate, where you find two queues of <code>ga1</code> and <code>ga2</code> people, and you know that each person you included an average takes 20 seconds to pass: again you choose the shortes queue. Luckily the aircraft is next to the gate so you can directly choose whether to board at the queue at the head of the aircraft  with <code>bo1</code> people or at the queue at the tail of the plane with <code>bo2</code> people. Each passenger you included takes an average 30 seconds, and you choose the shortest queue.</p>
+<h3 id="Exercise---Airport">Exercise - Airport<a class="anchor-link" href="#Exercise---Airport">&#182;</a></h3><p>✪ You finally decide to take a vacation and you go to the airport, but you already know you will need to go through various queues. Luckily, you only have carry-on bag, so you directly go to security checks, where you can choose among three rows of people <code>sec1</code>, <code>sec2</code>, <code>sec3</code>. Each person an average takes 4 minutes to be examinated, you included, and obviously you choose the shortest queue. Afterwards you go to the gate, where you find two queues of <code>ga1</code> and <code>ga2</code> people, and you know that each person you included an average takes 20 seconds to pass: again you choose the shortes queue. Luckily the aircraft is next to the gate so you can directly choose whether to board at the queue at the head of the aircraft  with <code>bo1</code> people or at the queue at the tail of the plane with <code>bo2</code> people. Each passenger you included takes an average 30 seconds, and you choose the shortest queue.</p>
 <p>Write some code to calculate how much time you take in total to enter the plane, showing it in minutes and seconds.</p>
 <p>Example - given:</p>
 <div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">sec1</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">sec2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">sec3</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">ga1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">ga2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">bo1</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">bo2</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>
@@ -15300,7 +15321,7 @@ Sum of first 6 integers: 21
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">sec1</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">sec2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">sec3</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">ga1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">ga2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">bo1</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">bo2</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>     <span class="c1">// 24 minutes and 30 seconds</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">sec1</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">sec2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">sec3</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">ga1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">ga2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">bo1</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">bo2</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>     <span class="c1">// 24 minutes and 30 seconds</span>
 <span class="c1">//int sec1=9,sec2=7,sec3=1,ga1=3,ga2=5,bo1=2,bo2=9;   // 10 minutes and 50 seconds</span>
 
 <span class="c1">// write here</span>
@@ -15323,8 +15344,74 @@ Sum of first 6 integers: 21
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>24 minutes and 30 seconds
-</pre>
+<pre>24 minutes and 30 seconds</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercise---Holiday-trip">Exercise - Holiday trip<a class="anchor-link" href="#Exercise---Holiday-trip">&#182;</a></h3><p>✪✪ While an holiday you are traveling by car, and in a particular day you want to visit one among 4 destinations. Each location requires to go through two roads <code>r1</code> and <code>r2</code>. Roads are numbered with two digits numbers, for example to reach destination <code>1</code> you need to go to road <code>58</code> and road <code>17</code>.</p>
+<p>Write some code that given <code>r1</code> and <code>r2</code> roads shows the number of the destination.</p>
+<ul>
+<li>If the car goes to a road it shouldn't (i.e. road 666), put <code>0</code> in <code>destination</code></li>
+<li><strong>DO NOT</strong> use summations</li>
+<li><strong>IMPORTANT: DO NOT use</strong> <code>if</code> <strong>commands</strong> (it's possible, think about it ;-)</li>
+</ul>
+<p><img src="img/vacation-trip.png" alt="vacation-trip"></p>
+<p>Example 1 - given:</p>
+<div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">r1</span><span class="o">=</span><span class="mi">58</span><span class="p">,</span><span class="n">r2</span><span class="o">=</span><span class="mi">31</span><span class="p">;</span>
+</pre></div>
+<p>After your code it must print:</p>
+
+<pre><code>The destination is 2</code></pre>
+<p>Example 2 - given:</p>
+<div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">r1</span><span class="o">=</span><span class="mi">666</span><span class="p">,</span><span class="n">r2</span><span class="o">=</span><span class="mi">31</span><span class="p">;</span>
+</pre></div>
+<p>After your code it must print:</p>
+
+<pre><code>The destination is 0</code></pre>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">r1</span> <span class="o">=</span> <span class="mi">58</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>   <span class="c1">// 1</span>
+<span class="c1">//r1 = 58,r2 = 31;   // 2</span>
+<span class="c1">//r1 = 32,r2 = 29;   // 3</span>
+<span class="c1">//r1 = 42,r2 = 75;   // 4</span>
+<span class="c1">//r1 = 666,r2 = 31;  // 0</span>
+<span class="c1">//r1 = 58,r2 = 666;  // 0</span>
+<span class="c1">//r1 = 32,r2 = 999;  // 0</span>
+
+<span class="c1">// write here</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>The destination is 1</pre>
 </div>
 </div>
 
