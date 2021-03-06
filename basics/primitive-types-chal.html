@@ -14573,7 +14573,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-c++"><pre><span></span><span class="kt">int</span> <span class="n">b_mat</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">b_bac</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">b_cov</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">r_mat</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">r_bac</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">r_cov</span><span class="o">=</span><span class="mi">24</span><span class="p">;</span>    <span class="c1">// 38</span>
+<div class=" highlight hl-c++"><pre><span></span><span class="c1">// needed for min / max with curly brackets</span>
+<span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="n">b_mat</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">b_bac</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">b_cov</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">r_mat</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">r_bac</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">r_cov</span><span class="o">=</span><span class="mi">24</span><span class="p">;</span>    <span class="c1">// 38</span>
 <span class="c1">//int b_mat=81, b_bac=37, b_cov=32, r_mat=54, r_bac=36, r_cov=91;  // 82</span>
 <span class="c1">//int b_mat=21, b_bac=39, b_cov=47, r_mat=54, r_bac=36, r_cov=91;  // 48</span>
 
