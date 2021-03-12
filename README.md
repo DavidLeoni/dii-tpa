@@ -10,6 +10,7 @@ Some exercises: https://davidleoni.github.io/dii-tpa/
 
 
 [Challenge 1: Primitive types](basics/primitive-types-chal.html)
+[Challenge 2: Control Flow](control-flow/control-flow-chal.html)
 
 
 
