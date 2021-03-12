@@ -4,9 +4,9 @@
 ## Dipartimento di Ingegneria Industriale, UniTN
 
 
-Moodle: http://tpa.davidleoni.it
+Moodle: [tpa.davidleoni.it](http://tpa.davidleoni.it)
 
-Some exercises: https://davidleoni.github.io/dii-tpa/
+Some exercises: [davidleoni.github.io/dii-tpa/](https://davidleoni.github.io/dii-tpa/)
 
 
 [Challenge 1: Primitive types](basics/primitive-types-chal.html)
