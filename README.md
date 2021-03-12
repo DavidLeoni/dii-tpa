@@ -4,7 +4,7 @@
 ## Dipartimento di Ingegneria Industriale, UniTN
 
 
-Moodle: tpa.davidleoni.it
+Moodle: http://tpa.davidleoni.it
 
 Some exercises: https://davidleoni.github.io/dii-tpa/
 
