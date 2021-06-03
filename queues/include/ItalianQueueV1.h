@@ -4,9 +4,12 @@
 #include <iostream>
 #include <sstream>
 
+#include <vector>
+
 using std::stringstream;
 using std::string;
 using std::ostream;
+using std::vector;
 using std::cout;
 using std::endl;
 
@@ -30,6 +33,10 @@ class Node {
             this->next_ = NULL;
         }
 
+        ~Node(){
+            cout << "DEBUG: " << *this << " destructor" << endl;
+        }
+
         const T& data() {
             return this->data_;
         }
@@ -50,8 +57,13 @@ class Node {
             this->next_ = newnext;
         }
 
-      template<typename U> // TODO
-      friend ostream& operator<<(ostream& os, const Node<U>& queue);  
+    // Overrides default ostream << behaviour
+    // NOTE: - C++ weirdness: we redefine the template type with a different name U because 
+    //         this is a function *EXTERNAL* to the class
+    //       - friend means that even if external to the class, the function body will be able to access private members
+      template<typename U> 
+      friend ostream& operator<<(ostream& os, const Node<U>& node);  
+
 };
 
 
@@ -85,7 +97,7 @@ with a matching group.
 template<typename T>
 class ItalianQueueV1 {
 
-    private:
+    protected:
         Node<T>* head_;
         Node<T>* tail_;
         int size_;
@@ -103,11 +115,25 @@ class ItalianQueueV1 {
         ///jupman-raise
     }
 
+    /** Remember to delete nodes */
+    ~ItalianQueueV1(){
+        //jupman-raise
+        cout << "DEBUG: Queue destructor" << endl;
+        Node<T>* current = this->head_;
+        while (current != NULL) {
+            Node<T>* pnext = current->next();
+            delete current;
+            current = pnext;
+
+        }
+        ///jupman-raise
+    }
+
     /** Return the size of the queue.
     
         - MUST run in O(1)
     */    
-    int size() const {
+    virtual int size() const {
         //jupman-raise
         return this->size_;
         ///jupman-raise
@@ -117,7 +143,7 @@ class ItalianQueueV1 {
     
         - MUST run in O(1)
     */
-    bool is_empty() const {
+    virtual bool is_empty() const {
         //jupman-raise
         return this->head_ == NULL;
         ///jupman-raise
@@ -128,7 +154,7 @@ class ItalianQueueV1 {
         - If the queue is empty, throws a std::out_of_range exception
         - MUST run in O(1)
     */
-    const T& top() const {
+    virtual const T& top() const {
         //jupman-raise
         if (this->head_ != NULL) {
             return this->head_->data();
@@ -144,7 +170,7 @@ class ItalianQueueV1 {
             - If the queue is empty, throws a std::out_of_range exception
             - MUST run in O(1)
     */
-    const string& top_group() const {
+    virtual const string& top_group() const {
         //jupman-raise
         if (this->head_ != NULL){
             return this->head_->group();
@@ -159,7 +185,7 @@ class ItalianQueueV1 {
         - If the queue is empty, throws a std::out_of_range exception
         - MUST run in O(1)
     */
-    const T& tail() const {
+    virtual const T& tail() const {
         //jupman-raise
         if (this->tail_ != NULL){
             return this->tail_->data();
@@ -174,7 +200,7 @@ class ItalianQueueV1 {
             - If the queue is empty, throws a std::out_of_range exception
             - MUST run in O(1)
     */
-    const string& tail_group() const {
+    virtual const string& tail_group() const {
         //jupman-raise
         if (this->tail_ != NULL){
             return this->tail_->group();
@@ -195,7 +221,7 @@ class ItalianQueueV1 {
 
         - MUST run in O(n)
     */
-    void enqueue(const T& v, const string g){
+    virtual void enqueue(const T& v, const string g){
         //jupman-raise
         cout << endl << "DEBUG: enqueing " << v << "," << g << endl;
         Node<T>* new_node = new Node<T>(v,g);
@@ -237,7 +263,7 @@ class ItalianQueueV1 {
             - If the queue is empty, raises a std::out_of_range exception
             - MUST run in O(1)
     */
-    const T& dequeue(){
+    virtual const T& dequeue(){
         //jupman-raise
         cout << endl <<  "DEBUG: dequeuing.." << endl;
         if (this->head_ != NULL){
@@ -253,58 +279,90 @@ class ItalianQueueV1 {
         }
         //jupman-raise
     }
-
-    template<typename U> // TODO
+     
+    // Overrides default ostream << behaviour
+    // NOTE: - C++ weirdness: we redefine the template type with a different name U because 
+    //         this is a function *EXTERNAL* to the class
+    //       - friend means that even if external to the class, the function body will be able to access private members
+    template<typename U> 
     friend ostream& operator<<(ostream& os, const ItalianQueueV1<U>& queue);
+
+    protected:
+        
+        virtual void print(std::ostream& os) const{
+            os << "ItalianQueue: ";
+
+            Node<T>* current = this->head_;    
+            
+            int i = 0;
+            while (current != NULL) {        
+                if (i>0){
+                    os << "->";
+                }
+                os << current->data();        
+                current = current->next();
+                i++;
+            };
+
+            os << "\n              ";
+
+            i = 0;
+            current = this->head_;    
+            while (current != NULL) {        
+                if (i>0){
+                    os << "  ";
+                }
+                os << current->group();
+                current = current->next();
+                i++;
+            };
+            
+            os << "\n         head_: "; 
+            if (this->head_){
+                os << *this->head_;
+            } else {
+                os << "NULL";
+            };
+            
+            os  << "\n         tail_: ";
+            if (this->tail_){
+                os << *this->tail_;
+            } else {
+                os << "NULL";
+            };            
+
+        }    
+
+        /**
+         * RETURN a vector holding the data found in nodes
+         * 
+         * We intend it as an inspection function which we don't 
+         * necessarily need ship to the client, so we declare it as an external 
+         * function which is a friend of this class, meaning it can access 
+         * private fields. We will implement it in tests.
+        */
+        template<typename U> 
+        friend vector<U> q2vn(const ItalianQueueV1<U>* pq);
+
+        /**
+         * RETURN a vector holding the groups found in nodes
+         * 
+         * We intend it as an inspection function which we don't 
+         * necessarily need ship to the client, so we declare it as an external 
+         * function which is a friend of this class, meaning it can access 
+         * private fields. We will implement it in tests.
+        */
+        template<typename U> 
+        friend vector<U> q2vg(const ItalianQueueV1<U>* pq);
 };
 
-/** For potentially complex data structures like this one, having 
-    a __str__ method is essential to quickly inspect the data by printing it. 
-*/
 
+// Overrides default ostream << behaviour
 template<typename T>
 ostream& operator<<(ostream& os, const ItalianQueueV1<T>& queue){
     
-    os << "ItalianQueueV1: ";
-
-    Node<T>* current = queue.head_;    
-    
-    int i = 0;
-    while (current != NULL) {        
-        if (i>0){
-            os << "->";
-        }
-        os << current->data();        
-        current = current->next();
-        i++;
-    };
-
-    os << "\n                ";
-
-    i = 0;
-    current = queue.head_;    
-    while (current != NULL) {        
-        if (i>0){
-            os << "  ";
-        }
-        os << current->group();
-        current = current->next();
-        i++;
-    };
-    
-    os << "\n         head_: "; 
-    if (queue.head_){
-        os << *queue.head_;
-    } else {
-        os << "NULL";
-    };
-    
-    os  << "\n         tail_: ";
-    if (queue.tail_){
-        os << *queue.tail_;
-    } else {
-        os << "NULL";
-    };
+    queue.print(os);
+    return os;
 }
 
 
