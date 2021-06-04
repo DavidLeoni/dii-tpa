@@ -79,7 +79,7 @@ void run_vector_example(){
     // b
     // e
 
-    cout << "for each construct, no reference" << endl;
+    cout << "for each construct: modifying without reference" << endl;
     for (char c : v){
         c = 'z';  // c is a copy, does *not* change characters inside v!        
     }
@@ -91,7 +91,7 @@ void run_vector_example(){
     // b
     // e
 
-    cout << "for each construct with reference" << endl;
+    cout << "for each construct: modifying with reference" << endl;
     for (char& cr : v){  // note the &     
         cr = 'z';  // Reference can change characters inside v
     }
