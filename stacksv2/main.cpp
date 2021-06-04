@@ -18,7 +18,7 @@ string vec2str(vector<T> v){
     return ss.str();
 }
 
-void vector_example(){
+void run_vector_example(){
 
     cout << endl;
     cout << "------ VECTOR EXAMPLE" << endl;
@@ -68,35 +68,56 @@ void vector_example(){
     cout << "vec: vec.back(): " << vec.back() << endl;
     
     cout << "for each construct" << endl;
-    // at each iteration, assigns variable c to an element of vector
+    // at each iteration, assigns variable c to a *copy* of element of vector
     vector<char> v = {'a','c','b','e'};
     for (char c : v){
-        cout << c << endl;
+        cout << c << endl;        
     }
     cout << endl;
     // a
     // c
     // b
     // e
+
+    cout << "for each construct, no reference" << endl;
+    for (char c : v){
+        c = 'z';  // c is a copy, does *not* change characters inside v!        
+    }
+    for (char c : v){
+        cout << c << endl;        
+    }
+    // a
+    // c
+    // b
+    // e
+
+    cout << "for each construct with reference" << endl;
+    for (char& cr : v){  // note the &     
+        cr = 'z';  // Reference can change characters inside v
+    }
+    for (char c : v){
+        cout << c << endl;     
+    }
+
+    // z
+    // z
+    // z
+    // z
     
     cout << "for each on regular arrays" << endl;
-    // works also on regular arrays (if compiler knows the dimension)
+    // works also on regular arrays (ONLY IF compiler knows the dimension)
     char prova[3] = {'a','b','c'};
-    for (char c : prova){
-        cout << c << endl;
+    for (char& c : prova){
+        cout << c << endl;        
     }
+
     cout << endl;
     // a
     // b
     // c   
-
 }
 
-
-int main () {
-
-    vector_example();
-    
+void run_basic_stack(){
     cout << endl;
     cout << "-----  BASIC STACK" << endl;    
 
@@ -155,7 +176,10 @@ int main () {
     cout << vec2str(ps1->popn(3)) << endl;   // cde
     cout << ps1->as_string() << endl;        // ab
 
+}
 
+void run_capped_stack(){
+    
     cout << endl;
     cout << "-----  CAPPED STACK" << endl;    
 
@@ -226,6 +250,18 @@ int main () {
     cout << ps2->as_string() << endl;  // abcde
     ((CappedStack<char>*) ps2)->set_cap(3);  // cutting characters in excess
     cout << ps2->as_string() << endl;  // abc
+
+}
+
+
+
+int main () {
+
+    run_vector_example();
+    
+    run_basic_stack();
+
+    run_capped_stack();
 
 
     return 0;
