@@ -32,7 +32,7 @@ class DenseMatrix : public Matrix<T>{
             //jupman-raise
             
             int prev = -1;
-            for (vector<T> v : values){
+            for (const vector<T>& v : values){
                 if (prev == -1){
                     prev = v.size();
                 } else {

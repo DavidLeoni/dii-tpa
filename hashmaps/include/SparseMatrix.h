@@ -38,7 +38,7 @@ class SparseMatrix : public Matrix<T>{
             //jupman-raise
 
             int prev = -1;
-            for (vector<T> v : values){
+            for (const vector<T>& v : values){
                 if (prev == -1){
                     prev = v.size();
                 } else {
@@ -172,7 +172,7 @@ class SparseMatrix : public Matrix<T>{
             }
             SparseMatrix<T> ret = SparseMatrix(*this);
 
-            for (Triplet<T> t : other.nonzero()){
+            for (Triplet<T>& t : other.nonzero()){
 
                 string coords = pair2str({t.row, t.col});
 
@@ -196,7 +196,7 @@ class SparseMatrix : public Matrix<T>{
                 throw std::invalid_argument(string("Mismatch in dimensions! this: ") + pair2str(this->shape()) 
                                                                                      + " other: " + pair2str(other.shape()) );
             }
-            for (Triplet<T> t : other.nonzero()){
+            for (Triplet<T>& t : other.nonzero()){
                 string coords = pair2str({t.row, t.col});
                 if (this->cells_.count(coords) == 1){
                     if (this->cells_[coords] + t.value == T()){

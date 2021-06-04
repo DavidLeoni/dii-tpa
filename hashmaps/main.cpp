@@ -81,11 +81,42 @@ void unordered_map_example(){
     // There are many ways to iterate stl collections, in unordered_map case a handy one 
     // is iterating through key/value pairs with a  range based for loop like this:
 
-    // **WARNING**: order of iteration is **NOT** guaranteed! Never make assumptions about it!
+    // **WARNING 1**: order of iteration is **NOT** guaranteed! Never make assumptions about it!    
 
     for (std::pair<char, int> element : umap) {
         cout << element.first << " : " << element.second << endl;
     }
+    
+    
+    cout << "----  Iterating and modifying without a reference" << endl;
+    // **WARNING 2**: without a reference, element holds a *copy* of key/values taken from the map
+
+    for (std::pair<char, int> element : umap) {
+        element.second = 666;  // doesn't actually change umap
+    }
+    for (std::pair<char, int> element : umap) {
+        cout << element.first << " : " << element.second << endl;
+    }
+    // c : 6
+    // b : 4
+    // z : 0
+    // a : 7
+
+    cout << "----  Iterating and modifying with a reference" << endl;
+    //  WARNING: with a reference we can rewrite values *but not keys*, so we MUST put const in keys
+    //  otherwise compiler complains
+    for (std::pair<const char, int>& element : umap) {   // notice const and &
+        // element.first = 'z'; // can't
+        element.second = 123;  // now ok
+    }
+    for (std::pair<char, int> element : umap) {
+        cout << element.first << " : " << element.second << endl;
+    }
+    // c : 123
+    // b : 123
+    // z : 123
+    // a : 123
+
 
     cout << "---- Finding an element" << endl;
 
@@ -138,7 +169,6 @@ void unordered_map_example(){
     
     //std::unordered_map<std::pair<int,int>, int> umpa; // pair not hashable
     //std::unordered_map<std::tuple<int,int>, int> umpa; // tuple not hashable
-    
 
 }
 
@@ -371,12 +401,15 @@ int main() {
     //std::unordered_map<char*, int> umap3;   // no
 
     unordered_map_example();
+    
+    
     multiset_example();
     
     conversions_example();
     dense_matrix_example();
     sparse_matrix_example();
     dense_and_sparse_matrix_example();
+    
 
     return 0;
 }
