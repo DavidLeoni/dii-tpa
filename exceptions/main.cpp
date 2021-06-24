@@ -1,40 +1,27 @@
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
-/**
-Il C++ mette a disposizione la classe string per manipolare facilmente sequenze di caratteri. string è mutabile, e si può anche variare la lunghezza con concatenazioni.
-
+/**  Con le eccezioni (una feature del C++) possiamo terminare prematuramente il programma in presenza di input non corretti.
 */
 
-string f(const char * inputs){
-
-    string ret = "ciao";
-
-    ret += inputs;
-
-    return ret;
+/**
+    Se il parametro i è negativo, lancia una eccezione e termina funzione E programma
+*/
+int f(int i){
+    cout << "INIZIO FUNZIONE" << endl;
+    if (i < 0){
+        throw std::invalid_argument( "Numero negativo!" ); // verrà poi visualizzato a video
+    }
+    cout << "FINE FUNZIONE" << endl;   // non verrà stampato
 }
 
-
 int main() {
+  std::cout << "Hello World!\n";  
 
-  string s = "ciao";
-
-  s += " mondo";
-
-  std::cout << s << endl;
-
-  std::cout << s.length() << endl;
-
-  cout << f("esperimento") << endl;
-
-  string stringa_fuori = f("prova2");
-
-  cout << stringa_fuori << endl;
-
-  stringa_fuori += " posso aggiungere";
-
-  cout << stringa_fuori << endl;
+  f(-5);  
+  
+  std::cout << "FINE PROGRAMMA!\n";  // non verrà stampato
 
 }
