@@ -170,6 +170,15 @@ void unordered_map_example(){
     //std::unordered_map<std::pair<int,int>, int> umpa; // pair not hashable
     //std::unordered_map<std::tuple<int,int>, int> umpa; // tuple not hashable
 
+    cout << " ---- INSERT TEST" << endl;
+    // WARNING: .insert METHOD ONLY INSERTS IF KEY DOES NOT ALREADY EXIST!!
+    //          PLEASE PREFER USING [] OPERATOR INSTEAD
+    unordered_map<string , int > mymap;
+
+    mymap.insert(std::pair<string, int>("a",3));
+    mymap.insert(std::pair<string, int>("a",4));
+    cout << mymap["a"] << endl;   //  3
+
 }
 
 void multiset_example(){
@@ -401,15 +410,13 @@ int main() {
     //std::unordered_map<char*, int> umap3;   // no
 
     unordered_map_example();
-    
-    
+        
     multiset_example();
     
     conversions_example();
     dense_matrix_example();
     sparse_matrix_example();
-    dense_and_sparse_matrix_example();
-    
+    dense_and_sparse_matrix_example();    
 
     return 0;
 }
